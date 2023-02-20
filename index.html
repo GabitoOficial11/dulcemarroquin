@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,7 +84,7 @@
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                           <li class="dia"><a class="dropdown-item" href="dia1.html">Día 1 (G)</a></li>
                                           <li class="dia"><a class="dropdown-item" href="dia2.html">Día 2 (L)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="404.html">Día 3 (?)</a></li>
+                                          <li class="dia"><a class="dropdown-item" href="dia3.html">Día 3 (A)</a></li>
                                           <li class="dia"><a class="dropdown-item" href="404.html">Día 4 (?)</a></li>
                                           <li class="dia"><a class="dropdown-item" href="404.html">Día 5 (?)</a></li>
                                           <li class="dia"><a class="dropdown-item" href="404.html">Día 6 (?)</a></li>
@@ -139,7 +140,25 @@
           </div>
         </div>
       </section>
-
+      <script>
+        Swal.fire({
+          icon: 'info',
+          title: 'Una sorpresa más, para alguien que merece muchas sorpresas',
+          text: 'Presiona el botón de Spotify o Youtube y encontrarás una pequeña sorpresa ❤',
+          confirmButtonText: 'De Acuerdo',
+          confirmButtonColor: '#00bd9d',
+          iconColor: '#00bd9d',
+          allowOutsideClick: false,
+          allowEscapeKey: false,
+          allowEnterKey: false,
+showClass: {
+popup: 'animate__animated animate__fadeInDown'
+},
+hideClass: {
+popup: 'animate__animated animate__fadeOutUp'
+}
+})
+      </script>
       <!-- Awards-->
       <!-- Portfolio-->
       <!-- Page Footer-->
