@@ -19,50 +19,39 @@
     <link rel="stylesheet" href="css/style.css">
     <style>.ie-panel{display: none;background: #212121;padding: 10px 0;box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3);clear: both;text-align:center;position: relative;z-index: 1;} html.ie-10 .ie-panel, html.lt-ie-10 .ie-panel {display: block;}</style>
     <script>
-      function alertagabo() {
-        Swal.fire({
-          title: 'Si el nombre quieres saber, el acertijo debes resolver',
-          input: 'text',
-          inputPlaceholder: 'Nombre',
-          footer: 'Puedes guiarte por las letras en el calendario',
-          inputAttributes: {
-            autocapitalize: 'off'
-          },
-          confirmButtonText: 'Siguiente',
-          showLoaderOnConfirm: true,
-          allowOutsideClick: () => !Swal.isLoading()
-        }).then((result) => {
-          if (result.value === 'Gabriel') {
-            const swalWithBootstrapButtons = Swal.mixin({
-              customClass: {
-                confirmButton: 'btn btn-success',
-              },
-              buttonsStyling: false
-            })
-      
-            swalWithBootstrapButtons.fire({
-              title: '¿Qué te ha parecido?',
-              text: "Dime tu respuesta presionando el botón",
-              icon: 'success',  
-              confirmButtonText: 'Entendido',
-              reverseButtons: true
-            }).then((result) => {
-              if (result.isConfirmed) {// Utilizar window.open() para abrir un enlace en una nueva ventana
-                  window.location.href = 'dia7.html';
-              }
-            })
-          }else{
-                Swal.fire({
+ function alertagabo() {
+  Swal.fire({
+    title: 'Si el nombre quieres saber, el acertijo debes resolver...',
+    input: 'text',
+    inputPlaceholder: 'Nombre',
+    footer: '<strong><p>Puedes guiarte por las letras en el calendario</p></strong>',
+    inputAttributes: {
+      autocapitalize: 'off'
+    },
+    confirmButtonText: 'Siguiente',
+    confirmButtonColor: '#00bd9d',
+    showLoaderOnConfirm: true,
+    showDenyButton: true,
+    denyButtonText: 'Salir',
+    allowOutsideClick: false,
+	  allowEscapeKey: false,
+    allowEnterKey: false,
+  }).then((result) => {
+    if(result.value==='Gabriel') {
+      window.location.href='dia7.html'
+    } else if(result.isDenied) {
+
+    } else{
+      Swal.fire({
         icon: 'error',
         title: 'Oops...',
-        text: 'Desbes ingresar un nombre válido',
+        text: 'Debes ingresar un nombre válido',
         footer: '<strong><p> Puedes guiarte ordenando las letras en el calendario</p></strong>'
       })
-              }
-        })
-      }
-      
-            </script>
+    }
+  })
+}
+      </script>
   </head>
   <body>
     <div class="ie-panel"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
@@ -116,27 +105,27 @@
                     </ul>
                   </div>
                   <!-- RD Navbar Nav MENU-->
-                                    <!-- RD Navbar Nav-->
-                                    <ul class="rd-navbar-nav">
-                                      <li class="active"><a href="index.html">Home<span></span><span></span><span></span><span></span></a>
-                                      </li>
-                                      <li><a href="about-me.html">¿Por qué lo hago?<span></span><span></span><span></span><span></span></a>
-                                      </li>
-                                      <div class="dropdown drop-color active">
-                                        <a class="btn buton-color dropdown-toggle" role="buton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                          Calendario de días 📅
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                          <li class="dia"><a class="dropdown-item" href="dia1.html">Día 1 (G)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="dia2.html">Día 2 (L)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="dia3.html">Día 3 (A)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="dia4.html">Día 4 (E)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="404.html">Día 5 (?)</a></li>
-                                          <li class="dia"><a class="dropdown-item" href="404.html">Día 6 (?)</a></li>
-                                          <li class="dia"><a class="dropdown-item" oneclick="alertagabo();">Día 7 (?)</a></li>
-                                        </div>
-                                      </div>
-                                    </ul>
+                  <!-- RD Navbar Nav-->
+                                <ul class="rd-navbar-nav">
+                                <li class="active"><a href="index.html">Home<span></span><span></span><span></span><span></span></a>
+                                </li>
+                                <li><a href="about-me.html">¿Por qué lo hago?<span></span><span></span><span></span><span></span></a>
+                               </li>
+                            <div class="dropdown drop-color active">
+                              <a class="btn buton-color dropdown-toggle" role="buton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Calendario de días 📅
+                              </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li class="dia"><a class="dropdown-item" href="dia1.html">Día 1 (G)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="dia2.html">Día 2 (L)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="dia3.html">Día 3 (A)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="dia4.html">Día 4 (E)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="dia5.html">Día 5 (R)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="404.html">Día 6 (?)</a></li>
+                            <li class="dia"><a class="dropdown-item" href="404.html">Día 7 (?)</a></li>
+                          </div>
+                        </div>
+                      </ul>
                 </div>
               </div>
             </div>
